@@ -65,7 +65,7 @@ const Nominants: FC<TWithId> = ({ id }) => {
 
     setPercentages(generated);
     setShowResults(true);
-    
+
     try {
       localStorage.setItem('votes_show_results', 'true');
       localStorage.setItem('votes_results', JSON.stringify(generated));
@@ -76,13 +76,20 @@ const Nominants: FC<TWithId> = ({ id }) => {
 
   return (
     <Tag tag='section' id={id} className='bg-background py-10 sm:py-20' inMotion={false}>
-      <div className='mx-auto max-w-2xl lg:mx-0'>
+      <div>
         <Title level='2' variant='secondary'>
-          Наши номинанты
+          Не о награде — о смысле
         </Title>
         <Text variant='secondary' className='mt-6'>
-          Мы - динамичная группа людей, которые горят своей работой и готовы приносить максимальную пользу.
+          Этот конкурс — не только шанс получить грант или признание. Это возможность заявить о том, что добро
+          существует. Мы ищем истории, которые вдохновляют, проекты, которые помогают, людей, которые умеют менять к
+          лучшему. Пять победителей получат гранты, медийную поддержку и ресурсы для реализации своих идей.
         </Text>
+      </div>
+      <div className='mx-auto mt-12 max-w-2xl lg:mx-0'>
+        <Title level='3' variant='tertiary'>
+          Герои конкурса
+        </Title>
       </div>
       <ul className='mx-auto mt-10 max-w-3xl space-y-6 lg:mx-0 lg:max-w-4xl'>
         {NOMINANTS.map((person, index) => (
@@ -106,8 +113,14 @@ const Nominants: FC<TWithId> = ({ id }) => {
                   <Title level='4' variant='tertiary' className='text-lg'>
                     {person.name}
                   </Title>
-                  <Text variant='secondary' className='mt-1 text-center text-sm text-info md:text-left'>
-                    {person.role}
+                  <Text
+                    variant='secondary'
+                    className='mt-1 text-center text-sm text-pretty break-words text-info md:text-left [&]:after:content-none'
+                    style={{
+                      whiteSpace: 'pre-line',
+                    }}
+                  >
+                    {person.role.replace(/\.\s+(?=[А-ЯЁA-Z])/g, '.\n')}
                   </Text>
                 </div>
               </div>

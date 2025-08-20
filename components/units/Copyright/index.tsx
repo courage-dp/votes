@@ -15,7 +15,7 @@ const Copyright: FC<CopyrightProps> = ({ className, siteName = SITE_NAME, showRi
   return (
     <p className={cn('mt-10 text-center text-sm/6 text-gray-600', className)}>
       &copy; {currentYear} {siteName}
-      {showRightsReserved && '. All rights reserved.'}
+      {showRightsReserved && '. Все права защищены.'}
     </p>
   );
 };

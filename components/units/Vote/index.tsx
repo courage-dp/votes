@@ -2,7 +2,7 @@
 
 import { FC, useState } from 'react';
 
-import { CheckIcon } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import Button from '@/components/elements/Button';
 import Modal from '@/components/elements/Modal';
@@ -50,9 +50,9 @@ const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
   return (
     <>
       <Button variant='success' size='sm' onClick={handleVoteClick} className={cn(className, 'flex gap-2')}>
-        Голосовать&nbsp;
+        Подать заявку&nbsp;
         <span aria-hidden='true'>
-          <CheckIcon className='size-4' />
+          <ArrowRight className='size-4' />
         </span>
       </Button>
 

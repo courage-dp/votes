@@ -1,6 +1,6 @@
 import { TScrollState } from '../interfaces/hoc/withScroll.types';
 
-export const SITE_NAME = 'Голос за добро' as const;
+export const SITE_NAME = 'Твой голос способен на большее' as const;
 
 export const initialScrollState: TScrollState = {
   isVisible: true,
