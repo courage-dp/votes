@@ -11,7 +11,6 @@ import LearnMore from '@/units/LearnMore';
 const stats = [
   { label: 'Основаны', value: '2021' },
   { label: 'Номинантов', value: '37' },
-  { label: 'Заработано', value: '$25M' },
 ];
 
 const Content: FC<TWithId> = ({ id }) => {
