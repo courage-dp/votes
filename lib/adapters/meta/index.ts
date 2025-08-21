@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://goloszadobro.ru/';
 
 const metaDataAdapter = (): Metadata => ({
   title: {
@@ -28,12 +28,12 @@ const metaDataAdapter = (): Metadata => ({
   },
   metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: '/',
+    canonical: 'https://goloszadobro.ru/',
   },
   openGraph: {
     type: 'website',
     locale: 'ru_RU',
-    url: '/',
+    url: 'https://goloszadobro.ru/',
     title: 'Голос за добро — поддержи добрые инициативы',
     description:
       'Поддерживайте социальные и благотворительные проекты. Голосуйте и делитесь добрыми делами вместе с «Голос за добро».',
