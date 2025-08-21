@@ -13,7 +13,7 @@ const Copyright: FC<CopyrightProps> = ({ className, siteName = SITE_NAME, showRi
   const currentYear = new Date().getFullYear();
 
   return (
-    <p className={cn('mt-10 text-center text-sm/6 text-gray-600', className)}>
+    <p className={cn('mt-10 text-center text-xs/8 text-secondary', className)}>
       &copy; {currentYear} {siteName}
       {showRightsReserved && '. Все права защищены.'}
     </p>

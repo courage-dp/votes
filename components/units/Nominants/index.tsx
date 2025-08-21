@@ -66,12 +66,8 @@ const Nominants: FC<TWithId> = ({ id }) => {
     setPercentages(generated);
     setShowResults(true);
 
-    try {
-      localStorage.setItem('votes_show_results', 'true');
-      localStorage.setItem('votes_results', JSON.stringify(generated));
-    } catch {
-      // ignore localStorage write errors
-    }
+    localStorage.setItem('votes_show_results', 'true');
+    localStorage.setItem('votes_results', JSON.stringify(generated));
   }, [buildLeaderboardPercents]);
 
   return (
@@ -94,33 +90,36 @@ const Nominants: FC<TWithId> = ({ id }) => {
       <ul className='mx-auto mt-10 max-w-3xl space-y-6 lg:mx-0 lg:max-w-4xl'>
         {NOMINANTS.map((person, index) => (
           <li key={person.name}>
-            <div className='flex flex-col items-center justify-between rounded-2xl border border-secondary/10 p-3 md:flex-row md:items-center'>
+            <div
+              className='flex flex-col items-center justify-between rounded-2xl border border-secondary/10 p-5 shadow-md md:flex-row
+                md:items-center'
+            >
               <div className='relative flex flex-col items-center gap-4 md:flex-row md:items-center'>
                 <div
-                  className='absolute -top-1 -left-1 flex h-6 w-6 items-center justify-center rounded-md bg-secondary text-base font-bold
+                  className='absolute -top-1 -left-1 z-10 flex h-6 w-6 items-center justify-center rounded-md bg-info text-base font-bold
                     text-primary'
                 >
                   {index + 1}
                 </div>
-                <Image
-                  alt='person'
-                  src={person.imageUrl}
-                  width={160}
-                  height={160}
-                  className='mx-auto h-60 w-full rounded-md object-cover md:w-60'
-                />
+                <div className='relative mx-auto h-90 w-full rounded-md border-4 border-info md:h-80 md:w-80'>
+                  <Image
+                    alt='person'
+                    src={person.imageUrl}
+                    width={160}
+                    height={160}
+                    className='aspect-square size-full object-cover object-top'
+                  />
+                </div>
                 <div className='flex w-full flex-col justify-center text-center md:text-left'>
                   <Title level='4' variant='tertiary' className='text-lg'>
                     {person.name}
                   </Title>
                   <Text
                     variant='secondary'
-                    className='mt-1 text-center text-sm text-pretty break-words text-info md:text-left [&]:after:content-none'
-                    style={{
-                      whiteSpace: 'pre-line',
-                    }}
+                    className='mt-1 max-w-md text-center text-sm break-words text-secondary-foreground md:text-left [&]:after:content-none'
+                    style={{ whiteSpace: 'pre-line' }}
                   >
-                    {person.role.replace(/\.\s+(?=[А-ЯЁA-Z])/g, '.\n')}
+                    {person.role}
                   </Text>
                 </div>
               </div>
