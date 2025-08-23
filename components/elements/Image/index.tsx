@@ -28,6 +28,7 @@ const Image: FC<TImage> = ({
         blurDataURL={blurDataURL}
         alt={alt ?? 'image'}
         className={className}
+        suppressHydrationWarning
       />
     );
   }
@@ -44,6 +45,7 @@ const Image: FC<TImage> = ({
       priority={priority}
       quality={99}
       loading={loading}
+      suppressHydrationWarning
     />
   );
 };

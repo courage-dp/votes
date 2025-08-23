@@ -31,7 +31,7 @@ const Modal: FC<TModal> = ({ isOpen, onClose, children, title, className }) => {
             >
               {title && (
                 <div className='mb-4 flex items-center justify-between'>
-                  <DialogTitle className='text-lg font-semibold text-secondary'>{title}</DialogTitle>
+                  <DialogTitle className='text-md font-semibold text-secondary md:text-lg'>{title}</DialogTitle>
                   <Button variant='ghost' size='sm' onClick={onClose} className='text-secondary hover:text-primary'>
                     <XMarkIcon className='size-5' />
                   </Button>

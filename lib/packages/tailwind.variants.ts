@@ -65,6 +65,7 @@ export const linkVariants = cva('font-medium cursor-pointer transition-colors du
         'hover:before:w-full',
       ],
       secondary: 'text-secondary hover:text-primary-foreground',
+      success: 'bg-green-600 text-white hover:bg-green-700 focus:ring-green-500',
     },
   },
   defaultVariants: {

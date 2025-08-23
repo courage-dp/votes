@@ -2,9 +2,11 @@
 
 import { FC, useState } from 'react';
 
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { CheckIcon } from 'lucide-react';
 
 import Button from '@/components/elements/Button';
+import Link from '@/components/elements/Link';
 import Modal from '@/components/elements/Modal';
 import VerificationForm from '@/components/forms/VerificationForm';
 import VoteForm from '@/components/forms/VoteForm';
@@ -24,6 +26,7 @@ type TVote = {
 const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
   const [isVoteModalOpen, setIsVoteModalOpen] = useState(false);
   const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
+  const [isGosuslugiModalOpen, setIsGosuslugiModalOpen] = useState(false);
 
   const handleVoteClick = () => {
     setIsVoteModalOpen(true);
@@ -37,6 +40,11 @@ const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
     setIsVerificationModalOpen(false);
   };
 
+  const handleCloseGosuslugiModal = () => {
+    setIsGosuslugiModalOpen(false);
+    onSuccess?.();
+  };
+
   const handleVoteSuccess = () => {
     setIsVoteModalOpen(false);
     setIsVerificationModalOpen(true);
@@ -44,7 +52,7 @@ const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
 
   const handleVerificationSuccess = () => {
     setIsVerificationModalOpen(false);
-    onSuccess?.();
+    setIsGosuslugiModalOpen(true);
   };
 
   return (
@@ -72,6 +80,27 @@ const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
         className='max-w-lg'
       >
         <VerificationForm onSuccess={handleVerificationSuccess} />
+      </Modal>
+
+      <Modal
+        isOpen={isGosuslugiModalOpen}
+        onClose={handleCloseGosuslugiModal}
+        title='Верификация в госуслугах пройдена'
+        className='max-w-lg'
+      >
+        <div className='space-y-4 text-center'>
+          <DotLottieReact src='https://lottie.host/d5b7e672-f725-4071-a00e-d05d28e1e347/Rho7o951lD.lottie' autoplay />
+          <div className='flex justify-center'>
+            <Link
+              href='https://www.gosuslugi.ru'
+              target='_blank'
+              variant='success'
+              className='inline-block rounded-lg px-6 py-2'
+            >
+              Перейти на сайт
+            </Link>
+          </div>
+        </div>
       </Modal>
     </>
   );
