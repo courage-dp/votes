@@ -3,8 +3,8 @@ import ZoomOnHover from '@/components/elements/ZoomOnHover';
 
 const ImageGrid = () => {
   return (
-    <div className='mt-14 flex justify-end gap-8 xl:-mt-44 2xl:mt-0 2xl:pl-20'>
-      <div className='ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 xl:order-last xl:pt-36 2xl:order-0 2xl:pt-80'>
+    <div className='mt-14 flex justify-end gap-8 lg:-mt-44 xl:mt-0 xl:pl-20'>
+      <div className='ml-auto w-44 flex-none space-y-8 pt-32 sm:ml-0 sm:pt-80 lg:order-0 lg:pt-36 xl:order-last xl:pt-80'>
         <div className='relative overflow-hidden rounded-xl'>
           <ZoomOnHover>
             <Image

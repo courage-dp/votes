@@ -97,7 +97,7 @@ const Vote: FC<TVote> = ({ person, className, onSuccess }) => {
               variant='success'
               className='inline-block rounded-lg px-6 py-2'
             >
-              Перейти на сайт
+              Ок
             </Link>
           </div>
         </div>
