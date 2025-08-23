@@ -26,7 +26,7 @@ const Hero: FC<TWithId> = ({ id }) => {
         </div>
         <div className='overflow-visible px-6 pt-20 pb-32 lg:px-8 lg:pt-32'>
           <div className='mx-auto max-w-sm flex-grow pl-6 sm:max-w-md sm:pl-4 lg:max-w-2xl lg:items-center xl:flex xl:max-w-none 2xl:max-w-4xl'>
-            <div className='relative w-full lg:max-w-xl lg:shrink-0 xl:max-w-2xl'>
+            <div className='relative w-full lg:max-w-xl xl:max-w-2xl 2xl:shrink-0'>
               <Title level='1' variant='primary'>
                 Твой голос способен на большее
               </Title>

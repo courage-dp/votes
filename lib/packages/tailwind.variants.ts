@@ -76,7 +76,8 @@ export const linkVariants = cva('font-medium cursor-pointer transition-colors du
 export const titleVariants = cva('font-medium break-words text-balance text-pretty', {
   variants: {
     variant: {
-      primary: 'text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold tracking-tight text-primary-foreground',
+      primary:
+        'text-xl md:text-2xl lg:text-3xl xl:text-3xl 2xl:text-5xl font-semibold tracking-tight text-primary-foreground',
       secondary: 'text-xl lg:text-2xl font-semibold tracking-tight text-secondary',
       tertiary: 'text-md lg:text-lg xl:text-xl font-semibold tracking-tight text-secondary',
     },
